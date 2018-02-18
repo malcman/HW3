@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if not longestTweet %}
+    There are no tweets and therefore not a longest one. Sorry boss.
+{% else %}
+	<b> {{ longestTweet[0] }}</b><br>
+	Posted by <i> {{ longestTweet[1]}} </i> aka {{ longestTweet[2] }}
+{% endif %}
+
+{% endblock %}
