@@ -105,9 +105,9 @@ class TweetForm(FlaskForm):
 			raise ValidationError(message)
 
 
-	text = StringField("Enter the tweet content: ", validators = [Required(), Length(1, 280)])
-	username = StringField("Enter the username of the desired Tweeter: ", validators = [Required(), Length(1,64), validateUserName])
-	display_name = StringField("Enter the display_name of said Tweeter: ", validators = [Required(), validateDisplayName])
+	text = StringField("Enter the text of the tweet (no more than 280 chars): ", validators = [Required(), Length(1, 280)])
+	username = StringField('''Enter the username of the twitter user (no "@"!): ''', validators = [Required(), Length(1,64), validateUserName])
+	display_name = StringField("Enter the display name for the twitter user (must be at least 2 words): ", validators = [Required(), validateDisplayName])
 	submit = SubmitField()
 	
 
